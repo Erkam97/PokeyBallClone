@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragMultiplier: 0.05
-  rotationMultiplier: 0.05
+  rotationMultiplier: 3
 --- !u!54 &264188961
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    public float dragMultiplier = .2f;
-    public float rotationMultiplier = 10f;
+    #region 1
+    public float dragMultiplier = .05f;
+    public float rotationMultiplier = 3f;
     private Rigidbody rb;
     private bool isFlying = false;
     private Vector3 initialPosition;
@@ -56,7 +57,7 @@ public class BallController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, -deltaY * dragMultiplier, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z);
 
-            
+
             rb.useGravity = true;
             isFlying = false;
         }
@@ -81,4 +82,45 @@ public class BallController : MonoBehaviour
         rb.velocity = Vector3.zero;
         isFlying = false;
     }
+    #endregion
+
+    #region 2
+    //public float pokeForce = 5f;
+    //public float flickForce = 10f;
+    //private Rigidbody rb;
+
+    //private void Start()
+    //{
+    //    rb = GetComponent<Rigidbody>();
+    //}
+
+    //private void Update()
+    //{
+
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        Poke();
+    //        rb.velocity = Vector3.zero;
+    //        rb.useGravity = false;
+    //    }
+
+
+    //    if (Input.GetMouseButtonUp(0))
+    //    {
+    //        Flick();
+    //        rb.useGravity = true;
+    //    }
+    //}
+
+    //private void Poke()
+    //{
+    //    rb.velocity = new Vector3(rb.velocity.x, pokeForce, rb.velocity.z);
+    //}
+
+    //private void Flick()
+    //{
+    //    Vector3 flickDirection = new Vector3(0f, flickForce, 0f);
+    //    rb.AddForce(flickDirection, ForceMode.Impulse);
+    //}
+    #endregion
 }
