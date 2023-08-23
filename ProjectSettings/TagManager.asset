@@ -6,7 +6,6 @@ TagManager:
   tags:
   - FailureWall
   - Plane
-  - UntouchableWall
   layers:
   - Default
   - TransparentFX

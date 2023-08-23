@@ -45,7 +45,7 @@ public class BallController : MonoBehaviour
         transform.position = new Vector3(transform.position.x, ball.gameObject.transform.position.y, transform.position.z);
         hook.SetActive(true);
 
-        ball.transform.parent.position = new(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
+        ball.transform.parent.position = new Vector3(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
     }
 
     private void OnMouseDrag()
@@ -66,13 +66,13 @@ public class BallController : MonoBehaviour
         {
             posY = -1 * (force / 90);
         }
-        ball.transform.parent.position = new(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
+        ball.transform.parent.position = new Vector3(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
     }
 
     private void OnMouseUp()
     {
         posY = 0;
-        ball.transform.parent.position = new(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
+        ball.transform.parent.position = new Vector3(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
         if (force <= 0)
         {
             force = 0;
