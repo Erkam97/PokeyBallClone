@@ -221,6 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cd28f373ff994408e6392c5d4c7277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obje1: {fileID: 483413206}
+  obje2: {fileID: 1727996520}
+  maxBendAngle: 45
 --- !u!120 &209217689
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1349,10 +1352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f64a79e67874f409d74577c6b73d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 483413206}
-  - {fileID: 1727996520}
-  lineRendererController: {fileID: 209217688}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LineRendererTesting : MonoBehaviour
 {
-    [SerializeField] private Transform[] points;
-    [SerializeField] private LineRendererController lineRendererController;
+    //[SerializeField] private Transform[] points;
+    //[SerializeField] private LineRendererController lineRendererController;
 
-    void Start()
-    {
-        lineRendererController.SetUpLine(points);
-    }
+    //void Start()
+    //{
+    //    lineRendererController.SetUpLine(points);
+    //}
 }
