@@ -301,6 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cd28f373ff994408e6392c5d4c7277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obje1: {fileID: 483413206}
+  obje2: {fileID: 1727996520}
 --- !u!120 &209217689
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -347,13 +349,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.15
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.24998547
+        value: 0.34433055
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -374,7 +376,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.6938923, b: 0, a: 0.39215687}
+      key0: {r: 1, g: 0.6938923, b: 0, a: 0.6862745}
       key1: {r: 1, g: 0.69411767, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -402,7 +404,7 @@ LineRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 90
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
@@ -1078,7 +1080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352d2ff728b626f41a87a700ff1ac3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTryUntouchable: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1363,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
@@ -1451,22 +1451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 264188959}
   smoothSpeed: 0.2
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f64a79e67874f409d74577c6b73d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 483413206}
-  - {fileID: 1727996520}
-  lineRendererController: {fileID: 209217688}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,11 +2056,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 30
+  maxLineForce: 0
   levelCompletedPanel: {fileID: 1546239902}
   levelFailedPanel: {fileID: 1609502550}
   ball: {fileID: 264188955}
   ballFinishLinePoint: {fileID: 1727996519}
   hook: {fileID: 559758308}
+  posY: 0
   smoothSpeed: 0.2
   initialPosition: {x: 0, y: 0, z: 0}
   initialHookPosition: {x: 0, y: 0, z: 0}
@@ -2286,7 +2272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727996519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 1.9945, z: -1.215}
+  m_LocalPosition: {x: -0.004, y: 2.05, z: -1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -7,6 +7,7 @@ public class BallController : MonoBehaviour
     public static BallController _ballController;
 
     public float force;
+    [HideInInspector] public float maxLineForce;
     private bool isFlying = false;
     public GameObject levelCompletedPanel;
     public GameObject levelFailedPanel;
@@ -14,11 +15,11 @@ public class BallController : MonoBehaviour
     public GameObject ballFinishLinePoint;
     public GameObject hook;
     private Vector3 offset;
-    private float posY = 0;
+    [HideInInspector] public float posY = 0;
     public float smoothSpeed;
-    [HideInInspector]public Vector3 initialPosition;
-    [HideInInspector]public Vector3 initialHookPosition;
-    [HideInInspector]public Vector3 initialBallRendererFinishPosition;
+    [HideInInspector] public Vector3 initialPosition;
+    [HideInInspector] public Vector3 initialHookPosition;
+    [HideInInspector] public Vector3 initialBallRendererFinishPosition;
     public Rigidbody rb;
     Vector3 dragStartPosition;
 
@@ -56,15 +57,17 @@ public class BallController : MonoBehaviour
         if (force >= 90)
         {
             posY = -1;
-            
+            maxLineForce = 110;
         }
         else if (force <= 0)
         {
             posY = 0;
+            maxLineForce = 90;
         }
         else
         {
             posY = -1 * (force / 90);
+            maxLineForce = 90 + (20 * (force / 90));
         }
         ball.transform.parent.position = new Vector3(ball.transform.parent.position.x, posY, ball.transform.parent.position.z);
     }
@@ -87,7 +90,6 @@ public class BallController : MonoBehaviour
         else if (force >= 90)
         {
             force = 30;
-            Debug.Log("90dan buyuk : " + force);
             rb.AddForce(Vector3.up * force, ForceMode.VelocityChange);
             rb.useGravity = true;
             isFlying = true;
@@ -96,7 +98,6 @@ public class BallController : MonoBehaviour
         else
         {
             force = 30 * (force / 90);
-            Debug.Log("90dan kucuk : " + force);
             rb.AddForce(Vector3.up * force, ForceMode.VelocityChange);
             rb.useGravity = true;
             isFlying = true;
@@ -113,6 +114,15 @@ public class BallController : MonoBehaviour
 
         Vector3 newPos = Vector3.Lerp(transform.position, offset + ball.transform.position, smoothSpeed);
         transform.position = newPos;
+
+        if (force >= 90)
+        {
+            ball.transform.parent.position = new Vector3(Random.Range(-.05f, .05f), posY, Random.Range(-.05f, .05f));
+        }
+        else
+        {
+            ball.transform.parent.position = new Vector3(0, posY, 0);
+        }
     }
 
     public void ResetBall()
